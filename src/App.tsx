@@ -1,7 +1,5 @@
 import React from 'react';
 import './App.css';
-import SubCard from './components/UiComponent/SubCard';
-
 import Connect2Phantom from './components/Connect2Phantom';
 import { Grid } from '@mui/material';
 

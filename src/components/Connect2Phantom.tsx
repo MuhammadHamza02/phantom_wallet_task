@@ -1,9 +1,8 @@
 import { FC, useEffect, useState } from "react";
-import { Connection, PublicKey, clusterApiUrl, LAMPORTS_PER_SOL } from "@solana/web3.js";
+import {  PublicKey } from "@solana/web3.js";
 import Airdrop from "./Airdrop";
 import * as React from 'react';
 import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
 import { Typography } from "@mui/material";
 
 type PhantomEvent = "disconnect" | "connect" | "accountChanged";
@@ -11,10 +10,6 @@ type PhantomEvent = "disconnect" | "connect" | "accountChanged";
 interface ConnectOpts {
     onlyIfTrusted: boolean;
 }
-interface AirdropProps {
-    pubkey: PublicKey;
-}
-
 
 interface PhantomProvider {
     connect: (opts?: Partial<ConnectOpts>) => Promise<{ publicKey: PublicKey }>;

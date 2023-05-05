@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import { Connection, PublicKey, clusterApiUrl, RpcResponseAndContext, SignatureResult } from "@solana/web3.js";
+import { Connection, PublicKey, clusterApiUrl } from "@solana/web3.js";
 import { FC, useEffect, useRef, useState } from "react";
 
 interface AirdropProps {
@@ -14,7 +14,6 @@ const Airdrop: FC<AirdropProps> = ({ pubkey }) => {
     // make it persistent across renders
     const connection = useRef(new Connection(clusterApiUrl(network)));
 
-    const [publickey] = useState<string>(pubkey.toBase58());
     const [balance, setBalance] = useState(0);
 
     // Retrieve the balance when mounting the component
@@ -28,7 +27,7 @@ const Airdrop: FC<AirdropProps> = ({ pubkey }) => {
     let digitSum = 0;
 
     while (num > 0 || digitSum > 9) {
-        if (num == 0) {
+        if (num === 0) {
             num = digitSum;
             digitSum = 0;
         }
