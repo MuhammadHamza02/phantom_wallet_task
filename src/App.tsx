@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import SubCard from './components/UiComponent/SubCard';
+
+import Connect2Phantom from './components/Connect2Phantom';
+import { Grid } from '@mui/material';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div className='App'>
+      <Grid container spacing={1}>
+        <Grid item md={12} sx={{ display: "flex", justifyContent: 'center', mt: 5 }} >
+          <h1>Solana With Phantom wallet</h1>
+
+        </Grid>
+        <Grid item md={12} sx={{ display: "flex", justifyContent: 'center' }}>
+          <Connect2Phantom />
+        </Grid>
+
+      </Grid>
     </div>
   );
 }
