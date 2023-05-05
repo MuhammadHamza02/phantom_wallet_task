@@ -10,13 +10,10 @@ const network = "testnet";
 
 const Airdrop: FC<AirdropProps> = ({ pubkey }) => {
 
-    // Create a connection to blockchain and
-    // make it persistent across renders
     const connection = useRef(new Connection(clusterApiUrl(network)));
 
     const [balance, setBalance] = useState(0);
 
-    // Retrieve the balance when mounting the component
     useEffect(() => {
         console.log(pubkey);
         connection.current.getBalance(pubkey).then(setBalance);
